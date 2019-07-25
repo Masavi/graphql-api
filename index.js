@@ -1,16 +1,13 @@
-const { GraphQLServer } = require('graphql-yoga')
+const { GraphQLServer } = require('graphql-yoga');
+const { makeExecutableSchema } = require("graphql-tools");
+const { importSchema } = require("graphql-import");
+const typeDefs = importSchema("./schema.graphql");
+const resolvers = require('./resolvers');
 
-const typeDefs = `
-  type Query {
-    hello(name: String): String!
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: (_, peticion) => `Hello ${peticion.name || 'World'}`,
-  },
-};
+const schema = makeExecutableSchema({
+	typeDefs,
+	resolvers,
+});
 
 const options = {
     port: 8000,
@@ -19,7 +16,9 @@ const options = {
     playground: '/playground',
 };
 
-const server = new GraphQLServer({ typeDefs, resolvers });
+const server = new GraphQLServer({
+	schema,
+});
 
 server.start(options, ({ port }) =>
   console.log(
