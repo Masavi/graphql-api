@@ -1,0 +1,21 @@
+{
+  "name": "graphql-api",
+  "version": "0.0.1",
+  "description": "Backend con graphql",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql",
+    "apollo",
+    "mongo"
+  ],
+  "author": "Maui Saavedra",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.18.1"
+  }
+}
