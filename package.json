@@ -16,6 +16,7 @@
   "author": "Maui Saavedra",
   "license": "MIT",
   "dependencies": {
-    "graphql-yoga": "^1.18.1"
+    "graphql-yoga": "^1.18.1",
+    "jsonwebtoken": "^8.5.1"
   }
 }
