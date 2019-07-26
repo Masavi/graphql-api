@@ -1,3 +1,5 @@
+require('dotenv').config()
+require('./database');
 const { GraphQLServer } = require('graphql-yoga');
 const { makeExecutableSchema } = require("graphql-tools");
 const { importSchema } = require("graphql-import");
