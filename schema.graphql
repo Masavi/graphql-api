@@ -4,9 +4,30 @@ type Query {
 
 type Mutation {
   signup(email: String!, password: String!): Auth!
+  createUser(data: UserCreateInput!): User
 }
 
 type Auth {
   message: String!
   token: String!
+}
+
+input UserCreateInput {
+  first_name: String
+  last_name: String
+  birth_date: String
+  gender: String
+  email: String!
+  password: String!
+}
+
+type User {
+  _id: String
+  first_name: String
+  last_name: String
+  birth_date: String
+  gender: String
+  email: String!
+  password: String
+  is_active: Boolean
 }

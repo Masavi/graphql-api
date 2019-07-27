@@ -6,6 +6,13 @@ const signup = (_, { email, password }) => {
                   .catch( error => error );
 }
 
+const createUser = (_, args) => {
+    return actions.createUser(args.data)
+                  .then( newUser => newUser )
+                  .catch( err => err);
+}
+
 module.exports = {
     signup,
+    createUser,
 }
