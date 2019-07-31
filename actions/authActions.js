@@ -2,13 +2,13 @@ const bcrypt = require('bcrypt');
 const { createUser, getUserByEmail } = require('./userActions');
 const { createToken } = require('../utils');
 
-const signup = (email, password) => {
+const signup = (user) => {
     return new Promise((resolve, reject) => {
-        createUser({email, password})
-            .then( user => {
+        createUser(user)
+            .then( newUser => {
                 resolve({
                     message: 'Signup exitoso',
-                    token: createToken(user._id, user.email, user.first_name)})
+                    token: createToken(newUser._id, newUser.email, newUser.first_name)})
             })
             .catch( err => {
                 reject({ 

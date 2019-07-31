@@ -1,7 +1,7 @@
 const actions = require('../actions');
 
-const signup = (_, { email, password }) => {
-    return actions.signup(email, password)
+const signup = (_, { data }) => {
+    return actions.signup(data)
                   .then( res => res)
                   .catch( err => err );
 };
@@ -12,8 +12,8 @@ const login = (_, {email, password}) => {
                   .catch(err => err);
 };
 
-const createUser = (_, args) => {
-    return actions.createUser(args.data)
+const createUser = (_, { data }) => {
+    return actions.createUser(data)
                   .then( newUser => newUser )
                   .catch( err => err);
 };
