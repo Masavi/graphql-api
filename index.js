@@ -19,7 +19,8 @@ const options = {
 };
 
 const server = new GraphQLServer({
-	schema,
+  schema,
+  context: req => ({...req})
 });
 
 server.start(options, ({ port }) =>
