@@ -10,7 +10,14 @@ const getUsers = (_, args, context) => {
                   .catch( err => err);
 }
 
+const getUser = (_, {id}) => {
+    return actions.getUser(id)
+                  .then(res => res)
+                  .catch(err => err);
+}
+
 module.exports = {
     hello,
     getUsers,
+    getUser,
 }

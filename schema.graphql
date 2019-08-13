@@ -3,6 +3,7 @@ scalar Upload
 type Query {
   hello(name: String): String!
   getUsers:[User]
+  getUser(id: String):User
 }
 
 type Mutation {

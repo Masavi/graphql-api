@@ -15,9 +15,14 @@ const createUser = async (user) => {
     return new User(user).save();
 };
 
+const getUser = (id) => {
+    return User.findById(id);
+}
+
 const getUserByEmail = (email) => User.findOne({ email }).exec();
 
 module.exports = {
+    getUser,
     getUsers,
     createUser,
     getUserByEmail,
