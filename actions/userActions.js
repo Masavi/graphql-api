@@ -1,6 +1,10 @@
 const User = require('../models/User');
 const { storeUpload } = require('../utils');
 
+const getUsers = () => {
+    return User.find();
+}
+
 const createUser = async (user) => {
     if ( user.profile_img ) {  
         const { createReadStream } = await user.profile_img;
@@ -14,6 +18,7 @@ const createUser = async (user) => {
 const getUserByEmail = (email) => User.findOne({ email }).exec();
 
 module.exports = {
+    getUsers,
     createUser,
     getUserByEmail,
 }
