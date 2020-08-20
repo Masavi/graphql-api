@@ -16,7 +16,7 @@
   "author": "Maui Saavedra",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cloudinary": "^1.14.0",
     "dotenv": "^8.0.0",
     "graphql-yoga": "^1.18.1",
